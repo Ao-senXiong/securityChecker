@@ -8,14 +8,19 @@ https://github.com/Ao-senXiong/securityChecker/actions
 
 
 ##### description of the lattice
-In the lattice, we have four qulifiers: @unsafe, @untrusted, @trusted and @safe.
-Within the scope of @unsafe qulifier, the argument is likely coming from a hacker(which 
-could be possibly identified by some activity pattern), 
-it should be rejected when try to concatenate with existing argument.
+In the lattice, we have four qulifiers: @untrusted, @trusted and @safe.
 
-Within the scope of @untrusted, the argument is likely coming from unknown user.
+Within the scope of @untrusted, 
+the argument is likely coming from unknown user.
 If the system want to use the argument in any way, 
-it should be sanitized and verified by a sanitizer and format checker.  
+it should be sanitized and verified by a sanitizer and format checker.
+
+Within the scope of @trusted, 
+the argument is from trusted source which implies its aim is harmless.
+However, it may need to be passed to a format checker to make its sure it is correct.
+
+Within the scope of @safe,
+the argument is considered from the trusted source in the right format.
 
 ##### what type rules are implemented
 

@@ -1,4 +1,4 @@
-package org.checkerframework.checker.templatefora.qual;
+package org.checkerframework.checker.security.qual;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,9 +9,7 @@ import org.checkerframework.framework.qual.SubtypeOf;
 import org.checkerframework.framework.qual.TargetLocations;
 import org.checkerframework.framework.qual.TypeUseLocation;
 
-/**
- * The value is definitely TODO. It is safe to use for TODO.
- */
+
 @SubtypeOf({Trusted.class})
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
