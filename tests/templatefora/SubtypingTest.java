@@ -1,7 +1,9 @@
+package templatefora;
+
 import org.checkerframework.checker.security.qual.*;
 
 // Test basic subtyping relationships for the TemplateForA Checker.
-class SubtypeTest {
+class SubtypingTest {
     void allSubtypingRelationships(@Untrusted int x, @Trusted int y, @Safe int z) {
         // :: error: assignment
         @Safe int a = x;
