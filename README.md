@@ -36,7 +36,7 @@ its type becomes @Safe and can not accept argument @Untrusted and @Trusted.
 ##### Can you think of further refinements to your type system or a combination with other analyses that would improve the analysis?
 
 Certainly, an interesting direction is to add sanitizer and formatter,
-which could make type from @Untrusted to @Trusted and @Trusted to @Safe.
+which could convert type from @Untrusted to @Trusted and @Trusted to @Safe and not simply define a new string.
 Also, it would be great if error report could be more precise on the specific location.
 
 ##### Can your type system have false positives or false negatives? What do these terms mean in this case?
@@ -44,5 +44,9 @@ Also, it would be great if error report could be more precise on the specific lo
 Yes, if the feature is not covered by subtyping relationship of basetypechecker
 then there would definitely be false positives.
 And if the type rules implemented are wrong, there would be false negatives.
+False positives, e.g., there is no false use of assignment, return and et al.
+However, the checker still issues compile time error.
+False negatives, e.g., if the user try to assign an @Untrusted value to @Safe variable,
+the checker did not issue any error at compile time which causes security vulnerability at run time.
 ##### Any observations about the Checker Framework
 I find it I could not assign value to variable when my checker is on.
