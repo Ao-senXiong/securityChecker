@@ -9,7 +9,11 @@ https://github.com/Ao-senXiong/securityChecker/actions
 
 ##### Description of the lattice
 In the lattice, we have four qualifiers: @untrusted, @trusted and @safe.
-
+```Mermaid
+flowchart BT
+A[Safe] --> B[Trusted]
+B --> C[Untrusted]
+```
 Within the scope of @untrusted, 
 the argument is likely coming from unknown user.
 If the system want to use the argument in any way, 
