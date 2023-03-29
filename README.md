@@ -7,8 +7,8 @@ https://github.com/Ao-senXiong/securityChecker
 https://github.com/Ao-senXiong/securityChecker/actions
 
 
-##### description of the lattice
-In the lattice, we have four qulifiers: @untrusted, @trusted and @safe.
+##### Description of the lattice
+In the lattice, we have four qualifiers: @untrusted, @trusted and @safe.
 
 Within the scope of @untrusted, 
 the argument is likely coming from unknown user.
@@ -22,12 +22,12 @@ However, it may need to be passed to a format checker to make its sure it is cor
 Within the scope of @safe,
 the argument is considered from the trusted source in the right format.
 
-##### what type rules are implemented
+##### What type rules are implemented
 
 For the current version of security checker, 
 I only inherit the type rules from the base type checker. 
 
-##### any flow-sensitive type refinements you implemented
+##### Any flow-sensitive type refinements you implemented
 
 No, 
 but I believe an interesting one is make if an @Untrusted field ever accepts @Safe argument,
