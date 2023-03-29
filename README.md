@@ -25,20 +25,24 @@ the argument is considered from the trusted source in the right format.
 ##### what type rules are implemented
 
 For the current version of security checker, 
-I only inherite the type rules from the base type checker. 
+I only inherit the type rules from the base type checker. 
 
 ##### any flow-sensitive type refinements you implemented
 
-TODO:
+No, 
+but I believe an interesting one is make if an @Untrusted field ever accepts @Safe argument,
+its type becomes @Safe and can not accept argument @Untrusted and @Trusted.
 
 ##### Can you think of further refinements to your type system or a combination with other analyses that would improve the analysis?
 
-TODO:
+Certainly, an interesting direction is to add sanitizer and formatter,
+which could make type from @Untrusted to @Trusted and @Trusted to @Safe.
+Also, it would be great if error report could be more precise on the specific location.
 
 ##### Can your type system have false positives or false negatives? What do these terms mean in this case?
 
-TODO:
-
+Yes, if the feature is not covered by subtyping relationship of basetypechecker
+then there would definitely be false positives.
+And if the type rules implemented are wrong, there would be false negatives.
 ##### Any observations about the Checker Framework
-
-TODO:
+I find it I could not assign value to variable when my checker is on.
